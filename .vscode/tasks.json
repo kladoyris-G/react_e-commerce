@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "React Dev in Docker",
+      "type": "shell",
+      "command": "docker build -t e-commerce . && docker run -it -v ${PWD}:/app -v /app/node_modules e-commerce",
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}

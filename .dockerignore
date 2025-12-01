@@ -1,0 +1,10 @@
+node_modules
+build
+Dockerfile
+.dockerignore
+.vite
+.git
+.gitignore
+
+
+
