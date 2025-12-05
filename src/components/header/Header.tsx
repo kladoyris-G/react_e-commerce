@@ -79,11 +79,14 @@ const Header: React.FC = () => {
             </li>
           </ul>
 
-          <input
-            type="text"
-            placeholder="Search for products..."
-            className={styles.searchBar}
-          />
+          <div className={styles.searchWrapper}>
+            <FaSearch className={styles.searchIcon} />
+            <input
+              type="text"
+              placeholder="Search for products..."
+              className={styles.searchBar}
+            />
+          </div>
 
           {/* Icons */}
           <div className={styles.icons}>
