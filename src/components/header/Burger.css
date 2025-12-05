@@ -2,8 +2,8 @@
   position: relative;
   width: 20px;
   height: 20px;
-  /* top: 0px;
-  left: 0px; */
+  left: 20px;
+  display: none;
 }
 
 .bm-burger-bars {
@@ -21,4 +21,20 @@
   padding: 1rem;
   text-decoration: none;
   display: block;
+}
+
+.bm-menu-wrap {
+  top: 0 !important;
+  height: 100vh !important;
+}
+
+.bm-overlay {
+  top: 0 !important;
+  height: 100vh !important;
+}
+
+@media (max-width: 768px) {
+  .bm-burger-button {
+    display: block;
+  }
 }
