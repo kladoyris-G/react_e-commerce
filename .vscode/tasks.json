@@ -4,7 +4,14 @@
     {
       "label": "React Dev in Docker",
       "type": "shell",
-      "command": "docker build -t e-commerce . && docker run -it -v ${PWD}:/app -v /app/node_modules e-commerce",
+      "command": "docker build -t e-commerce . && docker run --rm -it -p 3000:3000 -v ${PWD}:/app -v /app/node_modules e-commerce",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "React Prod in Docker",
+      "type": "shell",
+      "command": "docker build -f Dockerfile.prod -t e-commerce-prod . && docker run --rm -it -p 8080:80 e-commerce-prod",
       "isBackground": true,
       "problemMatcher": []
     }
