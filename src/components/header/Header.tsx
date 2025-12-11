@@ -10,6 +10,7 @@ import styles from "./Header.module.css";
 import Home from "../../pages/home/Home";
 import { slide as Menu } from "react-burger-menu";
 import "./Burger.css";
+import clsx from "clsx";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +43,7 @@ const Header: React.FC = () => {
             Brands
           </Link>
         </Menu>
-        <nav className={styles.navbar}>
+        <nav className={clsx(styles.navbar, "mainContentWrapper")}>
           {/* Logo */}
           <h1 className={styles.logo}>
             <Link to={Home.route}>SHOP.CO</Link>

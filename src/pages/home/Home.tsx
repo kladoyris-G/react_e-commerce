@@ -1,11 +1,15 @@
 import React from "react";
 
-// Define your component
+import HeroContainer from "./componets/Hero_container/Hero_container";
+
 const Home: React.FC & { route: string } = () => {
-  return <h1>Home Page</h1>;
+  return (
+    <>
+      <HeroContainer />
+    </>
+  );
 };
 
-// Attach a static property
 Home.route = "/";
 
 export default Home;

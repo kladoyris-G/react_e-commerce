@@ -1,0 +1,20 @@
+.statValue {
+  margin: 0;
+  font-family: "Satoshi";
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.title {
+  margin: 0;
+  font-family: "Satoshi";
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0%;
+}

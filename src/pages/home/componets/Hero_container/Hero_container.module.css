@@ -1,0 +1,42 @@
+.title {
+  font-size: 60px;
+  color: #000;
+  font-weight: 700;
+  font-family: "Integral-Cf", sans-serif;
+  font-style: bold;
+}
+
+.subTitle {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #00000099;
+}
+
+.mainContainer {
+  background-color: #f2f0f1;
+}
+
+.shopBtn {
+  background-color: #000 !important;
+}
+
+.shopText {
+  color: #fff;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Satoshi", sans-serif;
+}
+
+@media (max-width: 580px) {
+  .title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 380px) {
+  .title {
+    font-size: 30px;
+  }
+}
