@@ -8,7 +8,7 @@ const HeroContainer: React.FC = () => {
     <div className={styles.mainContainer}>
       <div className={clsx("mainContentWrapper pt-3")}>
         {/* Titles and Shop btn */}
-        <div className="row ">
+        <div className="row">
           <div className="col-sm">
             <div>
               <h1 className={styles.title}>
