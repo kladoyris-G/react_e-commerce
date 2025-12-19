@@ -1,0 +1,41 @@
+.title {
+  width: 40%;
+}
+.link {
+  width: 60%;
+}
+.description {
+  width: 70%;
+}
+
+.imageCard {
+  height: 295px;
+  width: 298px;
+  border-radius: 8px;
+}
+.stroke {
+  height: 15px;
+  background: #777;
+  margin: 10px 0;
+}
+
+@keyframes fullView {
+  100% {
+    width: 100%;
+  }
+}
+.animate {
+  animation: shimmer 3s;
+  animation-iteration-count: infinite;
+  background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
+  background-size: 1000px 100%;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -1000px 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+}

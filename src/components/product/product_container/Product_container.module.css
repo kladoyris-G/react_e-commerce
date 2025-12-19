@@ -1,0 +1,88 @@
+.productWrapper {
+  width: 295px;
+}
+
+.imageContainer {
+  width: 295px;
+  height: 298px;
+  top: 1104px;
+  left: 100px;
+  border-radius: 20px;
+  background-color: #f0eeed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.title {
+  font-family: "Satoshi";
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  margin-top: 8px;
+}
+
+.ratingValue {
+  font-family: "Satoshi";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.ratingBase {
+  font-family: "Satoshi";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #00000099;
+}
+
+.price {
+  font-family: "Satoshi";
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 24px;
+}
+
+.price .discountPrice {
+  color: #00000066;
+  text-decoration: line-through;
+}
+
+.discount {
+  width: 58;
+  height: 28;
+  gap: 12px;
+  background-color: #ff33331a;
+  opacity: 1;
+  border-radius: 62px;
+  padding-top: 6px;
+  padding-right: 14px;
+  padding-bottom: 6px;
+  padding-left: 14px;
+
+  font-family: "Satoshi";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ff3333;
+}
