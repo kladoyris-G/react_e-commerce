@@ -1,5 +1,5 @@
 import Rating from "@mui/material/Rating";
-import type { Product } from "../../../models/product/Product";
+import type { Product } from "@models/product/Product";
 import styles from "./Product_container.module.css";
 import clsx from "clsx";
 

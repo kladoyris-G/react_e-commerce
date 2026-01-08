@@ -1,5 +1,5 @@
 import { serverApi } from "./Server_api";
-import { Product } from "../../models/product/Product";
+import { Product } from "@models/product/Product";
 
 export const productApi = serverApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -16,7 +16,7 @@ export const productApi = serverApi.injectEndpoints({
       }) => {
         console.log("Raw server response:", response);
 
-        return response.data.map((item) => new Product(item));
+        return response.data.map((item) => new Product(item)).slice(0, 4);
       },
       providesTags: ["Product"],
     }),

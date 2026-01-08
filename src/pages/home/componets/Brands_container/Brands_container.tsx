@@ -1,9 +1,9 @@
 import clsx from "clsx";
-import versace from "../../../../assets/svgs/brands/versace.svg";
-import zara from "../../../../assets/svgs/brands/zara.svg";
-import gucci from "../../../../assets/svgs/brands/gucci.svg";
-import prada from "../../../../assets/svgs/brands/prada.svg";
-import calvinKlein from "../../../../assets/svgs/brands/calvin_klein.svg";
+import versace from "@assets/svgs/brands/versace.svg";
+import zara from "@assets/svgs/brands/zara.svg";
+import gucci from "@assets/svgs/brands/gucci.svg";
+import prada from "@assets/svgs/brands/prada.svg";
+import calvinKlein from "@assets/svgs/brands/calvin_klein.svg";
 import styles from "./Brands_container.module.css";
 
 const BrandsContainer: React.FC = () => {

@@ -22,7 +22,20 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    // aliases gia ta paths gia na mhn grafoyme olh thn ora ../../../
+    // an xrhsimopoioyme vite prepei na ta perasoyme kai sto vite.config.ts
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@services/*": ["services/*"],
+      "@hooks/*": ["hooks/*"],
+      "@utils/*": ["utils/*"],
+      "@pages/*": ["pages/*"],
+      "@models/*": ["models/*"],
+      "@assets/*": ["assets/*"]
+    }
   },
   "include": ["src"]
 }
