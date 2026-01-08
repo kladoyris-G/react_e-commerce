@@ -20,8 +20,26 @@ export const productApi = serverApi.injectEndpoints({
       },
       providesTags: ["Product"],
     }),
+
+    getTopSelling: builder.query<Product[], void>({
+      query: (body) => ({
+        url: "/api/products/top-selling",
+        method: "GET",
+        body,
+      }),
+      transformResponse: (response: {
+        success: boolean;
+        count: number;
+        data: any[];
+      }) => {
+        console.log("Raw server response:", response);
+
+        return response.data.map((item) => new Product(item)).slice(0, 4);
+      },
+      providesTags: ["Product"],
+    }),
   }),
   overrideExisting: false,
 });
 
-export const { useGetNewArrivalsQuery } = productApi;
+export const { useGetNewArrivalsQuery, useGetTopSellingQuery } = productApi;
