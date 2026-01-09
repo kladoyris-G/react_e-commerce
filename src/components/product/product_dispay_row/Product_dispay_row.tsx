@@ -25,7 +25,7 @@ const ProductDisplayRow: React.FC<ProductDisplayRowProps> = ({
 
   return (
     <div className="mainContentWrapper my-5">
-      <h1 className={styles.title}>{title}</h1>
+      <h1 className="title">{title}</h1>
 
       {/* Loading */}
       {isLoading && (
