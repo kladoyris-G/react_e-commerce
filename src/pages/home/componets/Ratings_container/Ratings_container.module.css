@@ -1,0 +1,100 @@
+.sliderArrow {
+  background: none;
+  border: none;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sliderArrow svg {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.sliderArrow:hover svg {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.sliderArrow:focus {
+  outline: none;
+}
+
+/* Embla base */
+.embla {
+  position: relative;
+  overflow: hidden;
+}
+
+.emblaViewport {
+  overflow: hidden;
+}
+
+.emblaContainer {
+  display: flex;
+}
+
+/* Slides */
+.emblaSlide {
+  flex: 0 0 100%;
+  padding-right: 16px;
+  transition: opacity 0.4s ease;
+  padding: 0 20px;
+}
+
+/* Multiple slides on desktop */
+@media (min-width: 768px) {
+  .emblaSlide {
+    flex: 0 0 20%;
+  }
+}
+
+.emblaFade::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.emblaFade::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+@media (min-width: 768px) {
+  .emblaFade::before,
+  .emblaFade::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .emblaFade::before {
+    left: 0;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .emblaFade::after {
+    right: 0;
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}

@@ -13,6 +13,6 @@ export const serverApi = createApi({
       return headers;
     },
   }),
-  tagTypes: ["Product"],
+  tagTypes: ["Product", "Rating"],
   endpoints: () => ({}),
 });

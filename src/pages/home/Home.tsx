@@ -4,6 +4,7 @@ import BrandsContainer from "./componets/Brands_container/Brands_container";
 import NewArrivalsContainer from "./componets/New_arrivals_container/New_arrivals_container";
 import TopSellingContainer from "./componets/Top_selling_container/Top_selling_container";
 import DressStyleContainer from "./componets/Dress_style_container/Dress_style_container";
+import RatingsContainer from "./componets/Ratings_container/Ratings_container";
 
 const Home: React.FC & { route: string } = () => {
   return (
@@ -16,6 +17,7 @@ const Home: React.FC & { route: string } = () => {
       </div>
       <TopSellingContainer />
       <DressStyleContainer />
+      <RatingsContainer />
       <div className="p-5"></div>
     </>
   );
