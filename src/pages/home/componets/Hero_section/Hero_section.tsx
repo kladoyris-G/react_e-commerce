@@ -1,4 +1,4 @@
-import styles from "./Hero_container.module.css";
+import styles from "./Hero_section.module.css";
 import clsx from "clsx";
 import homeImage from "/src/assets/images/home_image.png";
 import StatContainer from "../Stat_container/Stat_container";

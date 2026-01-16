@@ -1,4 +1,4 @@
-import styles from "./Dress_style_container.module.css";
+import styles from "./Dress_style_section.module.css";
 import clsx from "clsx";
 
 const DressStyleContainer: React.FC = () => {

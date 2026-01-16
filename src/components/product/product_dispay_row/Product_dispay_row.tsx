@@ -27,7 +27,6 @@ const ProductDisplayRow: React.FC<ProductDisplayRowProps> = ({
     <div className="mainContentWrapper my-5">
       <h1 className="title">{title}</h1>
 
-      {/* Loading */}
       {isLoading && (
         <div className="d-flex flex-row flex-wrap justify-content-around py-4">
           {Array.from({ length: 4 }).map((_, i) => (
@@ -36,10 +35,8 @@ const ProductDisplayRow: React.FC<ProductDisplayRowProps> = ({
         </div>
       )}
 
-      {/* Error */}
       {isError && <p style={{ color: "red" }}>Something went wrong</p>}
 
-      {/* Success */}
       {!isLoading && !isError && (
         <div className="d-flex flex-row flex-nowrap overflow-auto py-4">
           {products?.map((p) => (

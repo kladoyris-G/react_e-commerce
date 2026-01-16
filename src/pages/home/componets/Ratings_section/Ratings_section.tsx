@@ -1,9 +1,10 @@
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
-import styles from "./Ratings_container.module.css";
+import styles from "./Ratings_section.module.css";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useCallback } from "react";
 import clsx from "clsx";
+import { useGetRatingsQuery } from "@services/server_api/Ratings_api";
 
 const RatingsContainer: React.FC = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -27,6 +28,17 @@ const RatingsContainer: React.FC = () => {
   const scrollNext = useCallback(() => {
     emblaApi?.scrollNext();
   }, [emblaApi]);
+
+  const {
+    data: customerRatings,
+    isLoading,
+    isError,
+    error,
+  } = useGetRatingsQuery();
+
+  if (isError) {
+    console.error(`Fetch customers ratings error:`, error);
+  }
 
   return (
     <div className="my-5">
@@ -56,21 +68,33 @@ const RatingsContainer: React.FC = () => {
         </div>
       </div>
 
-      {/* Slider with fade */}
-      <div className={clsx(styles.embla, styles.emblaFade, "py-4")}>
-        <div className={styles.emblaViewport} ref={emblaRef}>
-          <div className={styles.emblaContainer}>
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div className={styles.emblaSlide} key={item}>
-                <div className="card p-4">
-                  ⭐⭐⭐⭐⭐
-                  <p>Customer review #{item}</p>
+      {isLoading && (
+        <div className="d-flex flex-row flex-wrap justify-content-around py-4">
+          {/* {Array.from({ length: 4 }).map((_, i) => (
+            <ProductShimmerContiner key={i} />
+          ))} */}
+          Loading...
+        </div>
+      )}
+
+      {isError && <p style={{ color: "red" }}>Something went wrong</p>}
+
+      {!isLoading && !isError && (
+        <div className={clsx(styles.embla, styles.emblaFade, "py-4")}>
+          <div className={styles.emblaViewport} ref={emblaRef}>
+            <div className={styles.emblaContainer}>
+              {customerRatings?.map((rating) => (
+                <div className={styles.emblaSlide} key={rating.id}>
+                  <div className="card p-4">
+                    ⭐⭐⭐⭐⭐
+                    <p>{rating.comment}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

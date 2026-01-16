@@ -1,10 +1,10 @@
 import React from "react";
-import HeroContainer from "./componets/Hero_container/Hero_container";
-import BrandsContainer from "./componets/Brands_container/Brands_container";
-import NewArrivalsContainer from "./componets/New_arrivals_container/New_arrivals_container";
-import TopSellingContainer from "./componets/Top_selling_container/Top_selling_container";
-import DressStyleContainer from "./componets/Dress_style_container/Dress_style_container";
-import RatingsContainer from "./componets/Ratings_container/Ratings_container";
+import HeroContainer from "./componets/Hero_section/Hero_section";
+import BrandsContainer from "./componets/Brands_section/Brands_section";
+import NewArrivalsContainer from "./componets/New_arrivals_section/New_arrivals_section";
+import TopSellingContainer from "./componets/Top_selling_section/Top_selling_section";
+import DressStyleContainer from "./componets/Dress_style_section/Dress_style_section";
+import RatingsContainer from "./componets/Ratings_section/Ratings_section";
 
 const Home: React.FC & { route: string } = () => {
   return (
