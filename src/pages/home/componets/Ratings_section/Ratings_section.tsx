@@ -5,6 +5,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { useCallback } from "react";
 import clsx from "clsx";
 import { useGetRatingsQuery } from "@services/server_api/Ratings_api";
+import CustomerRatingContainer from "@components/customer_rating/customer_rating_container/Customer_rating_container";
 
 const RatingsContainer: React.FC = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -85,10 +86,7 @@ const RatingsContainer: React.FC = () => {
             <div className={styles.emblaContainer}>
               {customerRatings?.map((rating) => (
                 <div className={styles.emblaSlide} key={rating.id}>
-                  <div className="card p-4">
-                    ⭐⭐⭐⭐⭐
-                    <p>{rating.comment}</p>
-                  </div>
+                  <CustomerRatingContainer customerRating={rating} />
                 </div>
               ))}
             </div>
