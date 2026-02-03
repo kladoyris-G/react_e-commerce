@@ -6,6 +6,7 @@ import { useCallback } from "react";
 import clsx from "clsx";
 import { useGetRatingsQuery } from "@services/server_api/Ratings_api";
 import CustomerRatingContainer from "@components/customer_rating/customer_rating_container/Customer_rating_container";
+import CustomerRatingShimmer from "@components/customer_rating/customer_rating_shimmer_container/Customer_rating_shimmer_container";
 
 const RatingsContainer: React.FC = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -19,7 +20,7 @@ const RatingsContainer: React.FC = () => {
         stopOnInteraction: false,
         stopOnMouseEnter: true,
       }),
-    ]
+    ],
   );
 
   const scrollPrev = useCallback(() => {
@@ -69,26 +70,23 @@ const RatingsContainer: React.FC = () => {
         </div>
       </div>
 
-      {isLoading && (
-        <div className="d-flex flex-row flex-wrap justify-content-around py-4">
-          {/* {Array.from({ length: 4 }).map((_, i) => (
-            <ProductShimmerContiner key={i} />
-          ))} */}
-          Loading...
-        </div>
-      )}
-
       {isError && <p style={{ color: "red" }}>Something went wrong</p>}
 
-      {!isLoading && !isError && (
+      {!isError && (
         <div className={clsx(styles.embla, styles.emblaFade, "py-4")}>
           <div className={styles.emblaViewport} ref={emblaRef}>
             <div className={styles.emblaContainer}>
-              {customerRatings?.map((rating) => (
-                <div className={styles.emblaSlide} key={rating.id}>
-                  <CustomerRatingContainer customerRating={rating} />
-                </div>
-              ))}
+              {isLoading
+                ? Array.from({ length: 5 }).map((_, index) => (
+                    <div className={styles.emblaSlide} key={`shimmer-${index}`}>
+                      <CustomerRatingShimmer />
+                    </div>
+                  ))
+                : customerRatings?.map((rating) => (
+                    <div className={styles.emblaSlide} key={rating.id}>
+                      <CustomerRatingContainer customerRating={rating} />
+                    </div>
+                  ))}
             </div>
           </div>
         </div>
