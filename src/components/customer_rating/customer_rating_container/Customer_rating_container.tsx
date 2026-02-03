@@ -13,7 +13,7 @@ const CustomerRatingContainer: React.FC<CustomerRatingProps> = ({
 }) => {
   return (
     <>
-      <div className="card p-4">
+      <div className="card p-4 w-100">
         <Rating
           name="half-rating"
           defaultValue={0}
@@ -29,7 +29,7 @@ const CustomerRatingContainer: React.FC<CustomerRatingProps> = ({
           <p
             className={clsx(
               "m-0 flex items-center justify-start gap-2 w-fit",
-              styles.title
+              styles.title,
             )}
           >
             <span>{customerRating.userName}</span>
