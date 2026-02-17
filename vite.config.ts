@@ -4,6 +4,8 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
+  // Keep Vite cache outside node_modules to avoid permission issues
+  cacheDir: ".vite",
   server: {
     host: true,       // listen on 0.0.0.0 so the host can reach the dev server
     port: 3000,       // container port we will expose
@@ -11,7 +13,7 @@ export default defineConfig({
     watch: {
       usePolling: true, // required on many Docker setups so Vite notices edits
       interval: 1000    // optional: reduces CPU on some systems
-    }
+    },
   },
    // aliases gia ta paths gia na mhn grafoyme olh thn ora ../../../
    // prepei na ta perasoyme kai sto tsconfig.app.json

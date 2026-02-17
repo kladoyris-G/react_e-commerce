@@ -18,7 +18,7 @@ const Header: React.FC = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <>
+    <header>
       <div className={styles.header}>
         <Menu
           isOpen={isOpen}
@@ -97,7 +97,7 @@ const Header: React.FC = () => {
           </div>
         </nav>
       </div>
-    </>
+    </header>
   );
 };
 

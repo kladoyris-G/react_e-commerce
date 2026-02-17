@@ -1,0 +1,38 @@
+.footer {
+  position: relative;
+}
+
+.footerWrapper {
+  position: relative;
+  padding-top: var(--newsletter-overlap, 72px);
+  background: #f0f0f0;
+}
+
+.newsletter {
+  position: relative;
+  z-index: 2;
+  margin-bottom: calc(var(--newsletter-overlap, 72px) * -1);
+
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  background: #000000;
+}
+
+.newsletterText {
+  font-family: "Integral-CF";
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 40px;
+  line-height: 45px;
+  letter-spacing: 0%;
+  color: #fff;
+}
+
+.newsletterTextBtn {
+  color: #000;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}

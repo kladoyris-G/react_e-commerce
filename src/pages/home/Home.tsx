@@ -18,7 +18,6 @@ const Home: React.FC & { route: string } = () => {
       <TopSellingContainer />
       <DressStyleContainer />
       <RatingsContainer />
-      <div className="p-5"></div>
     </>
   );
 };
