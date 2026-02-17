@@ -36,3 +36,29 @@
   font-weight: 500;
   transition: color 0.3s ease;
 }
+
+.brandText {
+  font-family: "Integral-CF";
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 33.45px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.footerText {
+  font-family: "Satoshi";
+  font-weight: 400;
+  color: #00000099;
+  text-decoration: none;
+}
+
+.footerTitle {
+  font-family: "Satoshi";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
