@@ -2,6 +2,8 @@ import Rating from "@mui/material/Rating";
 import type { Product } from "@models/product/Product";
 import styles from "./Product_container.module.css";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
+import ProductDetailesPage from "@pages/product/product_details_view/Product_detailes_page";
 
 type ProductContainerProps = {
   product: Product;
@@ -13,7 +15,12 @@ const ProductContainer: React.FC<ProductContainerProps> = ({
   className,
 }) => {
   return (
-    <div className={clsx(styles.productWrapper, className)}>
+    <Link
+      to={ProductDetailesPage.buildRoute(product.id)}
+      replace={false} //? gia na exei istoriko
+      className={clsx(styles.productWrapper, className)}
+      style={{ textDecoration: "none", color: "inherit", display: "block" }}
+    >
       <div className={styles.imageContainer}>
         <img className={styles.image} src={product.images[0]} />
       </div>
@@ -54,7 +61,7 @@ const ProductContainer: React.FC<ProductContainerProps> = ({
           </>
         )}
       </div>
-    </div>
+    </Link>
   );
 };
 

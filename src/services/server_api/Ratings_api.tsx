@@ -16,7 +16,7 @@ export const ratingApi = serverApi.injectEndpoints({
       }) => {
         console.log("Raw server response:", response);
 
-        return response.data.map((item) => CustomerRating.fromApi(item));
+        return response.data.map((item) => CustomerRating.fromJson(item));
       },
       providesTags: ["Rating"],
     }),

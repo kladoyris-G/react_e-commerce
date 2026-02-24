@@ -10,8 +10,24 @@ export class Product {
   finalPrice!: number;
 
   constructor(data: Partial<Product>) {
-    data.finalPrice = data.price! - (data.price! * (data.discount ?? 0)) / 100;
     Object.assign(this, data);
+  }
+
+  static fromJson(json: any): Product {
+    const price = json.price ?? 0;
+    const discount = json.discount ?? 0;
+
+    return new Product({
+      id: json._id ?? json.id ?? "",
+      title: json.title ?? "",
+      price,
+      categoryId: json.categoryId ?? 0,
+      images: json.images ?? [],
+      rating: json.rating ?? 0,
+      discount,
+      purchaseCount: json.purchaseCount ?? 0,
+      finalPrice: price - (price * discount) / 100,
+    });
   }
 
   get formattedPrice() {

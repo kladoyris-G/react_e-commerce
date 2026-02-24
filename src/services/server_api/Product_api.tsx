@@ -1,3 +1,4 @@
+import { ProductWithDetails } from "@models/product/Product_with_details";
 import { serverApi } from "./Server_api";
 import { Product } from "@models/product/Product";
 
@@ -16,7 +17,7 @@ export const productApi = serverApi.injectEndpoints({
       }) => {
         console.log("Raw server response:", response);
 
-        return response.data.map((item) => new Product(item)).slice(0, 4);
+        return response.data.map((item) => Product.fromJson(item)).slice(0, 4);
       },
       providesTags: ["Product"],
     }),
@@ -34,12 +35,33 @@ export const productApi = serverApi.injectEndpoints({
       }) => {
         console.log("Raw server response:", response);
 
-        return response.data.map((item) => new Product(item)).slice(0, 4);
+        return response.data.map((item) => Product.fromJson(item)).slice(0, 4);
       },
       providesTags: ["Product"],
+    }),
+
+    getProductDetails: builder.query<ProductWithDetails, string>({
+      query: (id) => ({
+        url: `/api/products/${id}`,
+        method: "GET",
+      }),
+      transformResponse: (response: {
+        success: boolean;
+        count: number;
+        data: any[];
+      }) => {
+        console.log("Raw server response:", response);
+
+        return ProductWithDetails.fromJson(response.data);
+      },
+      providesTags: ["ProductWithDetails"],
     }),
   }),
   overrideExisting: false,
 });
 
-export const { useGetNewArrivalsQuery, useGetTopSellingQuery } = productApi;
+export const {
+  useGetNewArrivalsQuery,
+  useGetTopSellingQuery,
+  useGetProductDetailsQuery,
+} = productApi;

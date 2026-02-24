@@ -9,13 +9,13 @@ export class CustomerRating {
     Object.assign(this, data);
   }
 
-  static fromApi(api: any): CustomerRating {
+  static fromJson(json: any): CustomerRating {
     return new CustomerRating({
-      id: api._id,
-      rating: api.rating,
-      userName: api.user,
+      id: json._id,
+      rating: json.rating,
+      userName: json.user,
       isUserValid: true,
-      comment: api.comment,
+      comment: json.comment,
     });
   }
 }
