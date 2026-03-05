@@ -2,7 +2,11 @@ import { CustomerRating } from "@models/customer_rating/Customer_rating";
 import { Product } from "./Product"; // assume you have Product class already
 
 export class ProductWithDetails extends Product {
-  ratings!: CustomerRating[];
+  customersRatings!: CustomerRating[];
+  shortDescription!: string;
+  fullDescription!: string;
+  sizes!: string[];
+  colors!: string[];
 
   constructor(data: Partial<ProductWithDetails>) {
     super(data); // call Product constructor
@@ -18,7 +22,11 @@ export class ProductWithDetails extends Product {
 
     return new ProductWithDetails({
       ...product, // spread all Product fields
-      ratings,
+      customersRatings: ratings,
+      shortDescription: json.shortDescription ?? "",
+      fullDescription: json.longDescription ?? "",
+      sizes: Array.isArray(json.sizes) ? json.sizes : [],
+      colors: ["#4F4631", "#314F4A", "#31344F"],
     });
   }
 }

@@ -36,7 +36,7 @@ const ProductContainer: React.FC<ProductContainerProps> = ({
           precision={0.5}
           readOnly
           sx={{
-            color: "##FFC633",
+            color: "#FFC633",
           }}
         />
 

@@ -22,7 +22,7 @@ const CustomerRatingContainer: React.FC<CustomerRatingProps> = ({
           precision={0.5}
           readOnly
           sx={{
-            color: "##FFC633",
+            color: "#FFC633",
           }}
         />
         <div className="py-2">
