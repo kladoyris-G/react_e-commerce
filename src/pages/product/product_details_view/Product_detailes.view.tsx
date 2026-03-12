@@ -3,6 +3,7 @@ import type { ProductWithDetails } from "@models/product/Product_with_details";
 import styles from "./Product_detailes.view.module.css";
 import clsx from "clsx";
 import Rating from "@mui/material/Rating";
+import PillButton from "@components/buttons/pill_button/Pill_button";
 
 type ProductDetailesViewProps = {
   productWithDetails?: ProductWithDetails;
@@ -30,6 +31,7 @@ const ProductDetailesView: React.FC<ProductDetailesViewProps> = ({
 
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     setSelectedImageIndex(0);
@@ -42,6 +44,10 @@ const ProductDetailesView: React.FC<ProductDetailesViewProps> = ({
   useEffect(() => {
     setSelectedColor(availableColors[0] ?? "");
   }, [availableColors, productWithDetails?.id]);
+
+  useEffect(() => {
+    setQuantity(1);
+  }, [productWithDetails?.id]);
 
   if (!productWithDetails) {
     return null;
@@ -205,9 +211,38 @@ const ProductDetailesView: React.FC<ProductDetailesViewProps> = ({
           </div>
           {/* =-=-=-=-=-= Add to card =-=-=-=-=-= */}
           <hr />
-          <p className={styles.text}>
-            Add to card: {selectedColor} / {selectedSize}
-          </p>
+          <div className="d-flex">
+            <div className="col-4 pe-2">
+              <div className={styles.quantityPill}>
+                <button
+                  type="button"
+                  className={styles.quantityEdgeButton}
+                  onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
+                  aria-label="Decrease quantity"
+                >
+                  -
+                </button>
+
+                <span className={styles.quantityValue}>{quantity}</span>
+
+                <button
+                  type="button"
+                  className={styles.quantityEdgeButton}
+                  onClick={() => setQuantity((prev) => prev + 1)}
+                  aria-label="Increase quantity"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+            <div className="col-8">
+              <PillButton
+                label="Add to Cart"
+                className={styles.addToCartButton}
+                labelClassName={styles.addToCartLabel}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

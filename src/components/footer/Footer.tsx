@@ -8,6 +8,7 @@ import {
 import clsx from "clsx";
 import styles from "./Footer.module.css";
 import InputWithIcon from "@components/inputs/input_with_icon/Input_with_icon";
+import PillButton from "@components/buttons/pill_button/Pill_button";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 import visa from "@assets/svgs/payments/visa.svg";
@@ -66,16 +67,7 @@ const Footer: React.FC = () => {
               icon={<MdOutlineEmail size={24} />}
             />
 
-            <div className="d-flex justify-content-center pt-2 px-2">
-              <button
-                type="button"
-                className={clsx("btn-lg rounded-pill p-2 w-100")}
-              >
-                <p className={styles.newsletterTextBtn}>
-                  Subscribe to Newsletter
-                </p>
-              </button>
-            </div>
+            <PillButton label="Subscribe to Newsletter" />
           </div>
         </div>
       </div>
