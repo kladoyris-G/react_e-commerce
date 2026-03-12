@@ -249,6 +249,22 @@
   font-weight: 600;
 }
 
+.tabContent {
+  padding: 1.5rem 0;
+  animation: tabFadeIn 0.25s ease;
+}
+
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
   .gallery {
     grid-template-columns: 1fr;
