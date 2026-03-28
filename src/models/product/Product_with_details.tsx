@@ -1,5 +1,6 @@
 import { CustomerRating } from "@models/customer_rating/Customer_rating";
 import { Product } from "./Product"; // assume you have Product class already
+import { FAQs } from "@models/FAQs/FAQs";
 
 export class ProductWithDetails extends Product {
   customersRatings!: CustomerRating[];
@@ -7,6 +8,7 @@ export class ProductWithDetails extends Product {
   fullDescription!: string;
   sizes!: string[];
   colors!: string[];
+  faqs!: FAQs[];
 
   constructor(data: Partial<ProductWithDetails>) {
     super(data); // call Product constructor
@@ -20,6 +22,8 @@ export class ProductWithDetails extends Product {
       ? json.reviews.map((review: any) => CustomerRating.fromJson(review))
       : [];
 
+    const faqs: FAQs[] = Array.isArray(json.faqs)? json.faqs.map((faq: any) => FAQs.fromJson(faq)):[];
+
     return new ProductWithDetails({
       ...product, // spread all Product fields
       customersRatings: ratings,
@@ -27,6 +31,7 @@ export class ProductWithDetails extends Product {
       fullDescription: json.longDescription ?? "",
       sizes: Array.isArray(json.sizes) ? json.sizes : [],
       colors: ["#4F4631", "#314F4A", "#31344F"],
+      faqs:faqs,
     });
   }
 }
