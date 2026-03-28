@@ -34,7 +34,7 @@ const ProductDetailesView: React.FC<ProductDetailesViewProps> = ({
           <ProductActions productId={productWithDetails.id} />
         </div>
       </div>
-      <ProductTabs productWithDetails={productWithDetails} />
+      <ProductTabs className="pt-5" productWithDetails={productWithDetails} />
     </section>
   );
 };

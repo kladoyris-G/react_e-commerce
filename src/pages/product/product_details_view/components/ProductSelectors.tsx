@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "../Product_detailes.view.module.css";
+import CustomToggleButton from "@components/buttons/custom_toggle_button/Custom_toggle_button";
 
 type ProductSelectorsProps = {
   colors: string[];
@@ -63,24 +64,14 @@ const ProductSelectors: React.FC<ProductSelectorsProps> = ({
       <div className={styles.sizeOptions} role="radiogroup" aria-label="Size">
         {sizes.map((size) => (
           <label key={size} className={styles.sizeLabel}>
-            <input
-              type="radio"
-              name="product-size"
-              value={size}
-              checked={selectedSize === size}
-              onChange={() => setSelectedSize(size)}
-              className={styles.sizeInput}
-            />
-            <span
-              className={
-                selectedSize === size
-                  ? `${styles.sizeChip} ${styles.sizeChipSelected}`
-                  : styles.sizeChip
-              }
-            >
-              {size}
-            </span>
+
+          <CustomToggleButton
+          label={size}
+          onClick={() => setSelectedSize(size)}
+          active = {selectedSize === size}
+          />
           </label>
+
         ))}
       </div>
     </>

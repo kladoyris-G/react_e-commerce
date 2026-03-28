@@ -1,7 +1,6 @@
-import styles from "./Product_dispay_row.module.css";
 import ProductShimmerContiner from "../product_shimmer_container/Product_shimmer_container";
 import ProductContainer from "../product_container/Product_container";
-import clsx from "clsx";
+import AnimatedPillButton from "@components/buttons/animated_pill_button/Animated_pill_button";
 
 interface ProductDisplayRowProps {
   title: string;
@@ -48,14 +47,9 @@ const ProductDisplayRow: React.FC<ProductDisplayRowProps> = ({
       )}
 
       {/* View All */}
-      <div className="d-flex justify-content-center pt-2">
-        <button
-          type="button"
-          className={clsx("btn-lg rounded-pill px-5", styles.viewAllBtn)}
-        >
-          <p className={styles.viewAllext}>View All</p>
-        </button>
-      </div>
+       <AnimatedPillButton label="View All"
+         onClick={() => {}}/>
+   
     </div>
   );
 };
